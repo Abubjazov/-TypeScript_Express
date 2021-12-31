@@ -14,7 +14,7 @@ router.get('/login', (req: Request, res: Response) => {
             <form method="POST">
                 <div>
                     <label>Your Email</label>
-                    <input name="emai" />
+                    <input name="email" />
                 </div>
                 <div>
                     <label>Password</label>
@@ -30,7 +30,11 @@ router.get('/login', (req: Request, res: Response) => {
 router.post('/login', (req: RequestWithBody, res: Response) => {
     const {email, password} = req.body
 
-    res.send(email?.toUpperCase() + " " + password)
+    if (email && password) {
+        res.send(email?.toUpperCase() + " " + password)
+    } else {
+        res.send('You must provide an email and password')
+    }
 })
 
 export { router }
