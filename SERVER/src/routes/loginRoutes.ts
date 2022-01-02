@@ -40,19 +40,7 @@ router.get('/', (req: Request, res: Response) => {
 
 
 
-router.post('/login', (req: RequestWithBody, res: Response) => {
-    const {email, password, } = req.body
 
-    if (email && password && email === 'abubjazov@mail.ru' && password === '123') {
-        req.session = { 
-            loggedIn: true,
-            login: email
-        }
-        res.redirect('/')
-    } else {
-        res.send('Invalid email or password')
-    }
-})
 
 router.get('/logout', (req: Request, res: Response) => {
     req.session = undefined
