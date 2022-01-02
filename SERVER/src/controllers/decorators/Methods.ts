@@ -1,7 +1,7 @@
 export enum Methods {
-    get = 'get',
-    post = 'post',
-    put = 'put',
-    del = 'delete',
-    patch = 'patch'
+    Get = 'get',
+    Post = 'post',
+    Put = 'put',
+    Del = 'delete',
+    Patch = 'patch'
 }
