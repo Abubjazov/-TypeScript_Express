@@ -23,7 +23,7 @@ router.get('/', (req: Request, res: Response) => {
             <h1>Welcome to our website ${req.session.login}</h1>
             <hr>
             <p>You are logged in</p>
-            <a href="/logout">Logout</a>     
+            <a href="/auth/logout">Logout</a>     
         </div>
         `)
     } else {
@@ -36,15 +36,6 @@ router.get('/', (req: Request, res: Response) => {
         </div>
         `)
     }
-})
-
-
-
-
-
-router.get('/logout', (req: Request, res: Response) => {
-    req.session = undefined
-    res.redirect('/')
 })
 
 router.get('/protected', requireAuth, (req: Request, res: Response) => {
