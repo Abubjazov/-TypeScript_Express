@@ -32,32 +32,13 @@ router.get('/', (req: Request, res: Response) => {
             <h1>Sorry</h1>
             <hr>
             <p>You are not logged in</p>
-            <a href="/login">Login</a>     
+            <a href="/auth/login">Login</a>     
         </div>
         `)
     }
 })
 
-router.get('/login', (req: Request, res: Response) => {
-    res.send(`
-        <div>
-            <h1>Welcome to our website</h1>
-            <hr>
-            <form method="POST">
-                <div>
-                    <label>Your Email</label>
-                    <input name="email" />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input name="password" type="password" />
-                </div>
-                <button type="submit">Log in</button>
-            </form>       
-        </div>
-        `
-    )
-})
+
 
 router.post('/login', (req: RequestWithBody, res: Response) => {
     const {email, password, } = req.body
